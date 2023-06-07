@@ -8,10 +8,15 @@
 import UIKit
 
 class MessagesTableViewController: UITableViewController {
-
+  
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // MARK: - Actions
+    @IBAction func addMessageButtonTapped(_ sender: Any) {
+        presentNewMessageAlert()
     }
 
     // MARK: - Table view data source
@@ -28,6 +33,7 @@ class MessagesTableViewController: UITableViewController {
         
         let message = MessageController.shared.messages[indexPath.row]
         cell.updateUI(message: message)
+        cell.delegate = self
 
         return cell
     }
@@ -39,9 +45,38 @@ class MessagesTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    // MARK: - Functions
+    func presentNewMessageAlert() {
+        let alert = UIAlertController(title: "New Message", message: "Type your message below, bro", preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = "Your message here..."
+        }
+        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let confirmAction = UIAlertAction(title: "Post", style: .default) { _ in
+            guard let textField = alert.textFields?.first,
+                  let messageText = textField.text else { return }
+            MessageController.shared.createMessage(text: messageText)
+            self.tableView.reloadData()
+        }
+        
+        alert.addAction(dismissAction)
+        alert.addAction(confirmAction)
+        present(alert, animated: true)
+    }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Thursday, the best day of the year
+    }
+}
+
+// MARK: - Extensions
+extension MessagesTableViewController: MessageTableViewCellDelegate {
+    func messageButtonTapped(cell: MessageTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let message = MessageController.shared.messages[indexPath.row]
+        MessageController.shared.toggleIsRead(message: message)
+        cell.updateUI(message: message)
     }
 }
