@@ -14,6 +14,9 @@
 		3AF2602B2A30D3630024E745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF260292A30D3630024E745 /* LaunchScreen.storyboard */; };
 		3AF260372A30DCCC0024E745 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF260362A30DCCC0024E745 /* Message.swift */; };
 		3AF260392A30DD8A0024E745 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF260382A30DD8A0024E745 /* MessageController.swift */; };
+		3AF2603D2A30E5CA0024E745 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2603C2A30E5CA0024E745 /* MessageTableViewCell.swift */; };
+		3AF2603F2A30E6000024E745 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2603E2A30E6000024E745 /* MessagesTableViewController.swift */; };
+		3AF260412A30E8F50024E745 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF260402A30E8F50024E745 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		3AF2602C2A30D3630024E745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AF260362A30DCCC0024E745 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3AF260382A30DD8A0024E745 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		3AF2603C2A30E5CA0024E745 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		3AF2603E2A30E6000024E745 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
+		3AF260402A30E8F50024E745 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 				3AF260202A30D3620024E745 /* SceneDelegate.swift */,
 				3AF260272A30D3630024E745 /* Assets.xcassets */,
 				3AF2602C2A30D3630024E745 /* Info.plist */,
+				3AF260402A30E8F50024E745 /* DateFormatter.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -89,7 +96,8 @@
 		3AF260342A30DC780024E745 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3AF260382A30DD8A0024E745 /* MessageController.swift */,
+				3AF2603B2A30E58E0024E745 /* ViewControllers */,
+				3AF2603A2A30E5890024E745 /* ModelControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -100,6 +108,23 @@
 				3AF260362A30DCCC0024E745 /* Message.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3AF2603A2A30E5890024E745 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AF260382A30DD8A0024E745 /* MessageController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		3AF2603B2A30E58E0024E745 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AF2603C2A30E5CA0024E745 /* MessageTableViewCell.swift */,
+				3AF2603E2A30E6000024E745 /* MessagesTableViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,8 +199,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF260372A30DCCC0024E745 /* Message.swift in Sources */,
+				3AF2603F2A30E6000024E745 /* MessagesTableViewController.swift in Sources */,
 				3AF2601F2A30D3620024E745 /* AppDelegate.swift in Sources */,
+				3AF260412A30E8F50024E745 /* DateFormatter.swift in Sources */,
 				3AF260212A30D3620024E745 /* SceneDelegate.swift in Sources */,
+				3AF2603D2A30E5CA0024E745 /* MessageTableViewCell.swift in Sources */,
 				3AF260392A30DD8A0024E745 /* MessageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
